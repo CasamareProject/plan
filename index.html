@@ -358,6 +358,7 @@
   .tag-research { background: var(--teal-bg); color: var(--teal-text); }
   .tag-review { background: var(--coral-bg); color: var(--coral-text); }
   .tag-tiktok { background: #f0e6ff; color: #5b21b6; }
+  .tag-fb { background: #dbeafe; color: #1e40af; }
 
   .check-btn {
     width: 26px;
@@ -486,7 +487,7 @@
     <div class="metric-card">
       <span class="val" id="m-done">0</span>
       <span class="lbl">виконано задач</span>
-      <span class="sub" id="m-done-sub">з 25 днів</span>
+      <span class="sub" id="m-done-sub">з 26 днів</span>
     </div>
     <div class="metric-card">
       <span class="val" id="m-reels">0</span>
@@ -502,6 +503,11 @@
       <span class="val" id="m-tiktok">0</span>
       <span class="lbl">TikTok відео</span>
       <span class="sub">ціль: 8 за місяць</span>
+    </div>
+    <div class="metric-card">
+      <span class="val" id="m-fb">0</span>
+      <span class="lbl">Facebook пости</span>
+      <span class="sub">ціль: 4 за місяць</span>
     </div>
     <div class="metric-card">
       <span class="val" id="m-leads">0</span>
@@ -534,6 +540,7 @@
     <button class="filter-btn" data-filter="analytics">Аналітика</button>
     <button class="filter-btn" data-filter="research">Дослідження</button>
     <button class="filter-btn" data-filter="tiktok">TikTok</button>
+    <button class="filter-btn" data-filter="fb">Facebook</button>
   </div>
 
   <div id="plan"></div>
@@ -565,16 +572,30 @@ const DAYS = [
   {
     id: 2, week: 1,
     day: 'Вт', date: '17 черв',
-    task: 'Підготувати Instagram профіль до запуску контенту',
-    metric: 'Ціль: біо оновлено, UTM-посилання в біо встановлено, хайлайти є',
+    task: 'Підготувати профілі Instagram, TikTok, Facebook до запуску',
+    metric: 'Ціль: 3 профілі готові, UTM-посилання в біо кожного встановлені',
     utm: 'ig_bio', tag: 'research',
-    detail: `Підготовка профілю перед першим Reel — займає 1 раз, але впливає на всі наступні публікації.<br><br>
-    <strong>Чеклист:</strong><br>
-    — Біо: хто ти, для кого бот, 1 речення. Приклад: «Telegram-бот для майстрів краси 💜 Клієнтська база + нагадування без нових додатків»<br>
+    detail: `Підготовка всіх трьох платформ перед першою публікацією — робиться один раз.<br><br>
+
+    <strong>📷 Instagram</strong><br>
+    — Біо: «Telegram-бот для майстрів краси 💜 База клієнтів + нагадування без додатків»<br>
     — Посилання в біо: <code>t.me/CasamareBeautyBot?start=ig_bio</code><br>
-    — Хайлайт «Як це працює»: 3–5 сторіз зі screen recording (знімеш пізніше)<br>
-    — Аватар: чіткий, впізнаваний логотип або фото<br><br>
-    Перевір що посилання з utm <strong>ig_bio</strong> трекується в Admin → 📈 Ліди після першого кліку.`
+    — Хайлайт «Як це працює»: заглушка зі screen recording (додаси пізніше)<br>
+    — Аватар: чіткий логотип або фото<br><br>
+
+    <strong>🎵 TikTok</strong><br>
+    — Створи акаунт якщо немає: @CasamareBeauty або схоже<br>
+    — Біо: «Telegram-бот для майстрів 👇» + посилання: <code>t.me/CasamareBeautyBot?start=tt_bio</code><br>
+    — Аватар: той самий що й в Instagram (впізнаваність)<br>
+    — Перше відео: не публікуй поки немає 3+ відео готових (алгоритм краще стартує з пачки)<br><br>
+
+    <strong>📘 Facebook</strong><br>
+    — Сторінка (не особистий профіль): CasamareBeauty або «Casamare — бот для майстрів»<br>
+    — Опис: той самий що в Instagram<br>
+    — Посилання: <code>t.me/CasamareBeautyBot?start=fb_bio</code><br>
+    — Facebook поки пасивний канал (Фаза 1 — органіка), але сторінка потрібна для майбутнього таргету<br><br>
+
+    Перевір: після кліку по кожному UTM-посиланню — воно має з'явитись в Admin → 📈 Ліди.`
   },
   {
     id: 3, week: 1,
@@ -856,6 +877,23 @@ const DAYS = [
     Скласти список 3 пріоритетів для місяця 2 на основі даних, не гіпотез.`
   }
   {
+    id: 26, week: 2,
+    day: 'Пт', date: '27 черв',
+    task: 'Facebook: опублікувати пост-знайомство + закріпити посилання',
+    metric: 'Ціль: 1 пост опублікований, посилання в біо сторінки встановлено',
+    utm: 'fb_w2', tag: 'fb',
+    detail: `<strong>Facebook — пасивний канал зараз, але треба засіяти.</strong><br><br>
+    Стратегія: публікуємо той самий текст що і в Telegram (день 4), адаптований під Facebook.<br><br>
+    <strong>Що опублікувати:</strong><br>
+    — Пост-знайомство: особиста історія засновника (той самий текст з дня 4, або скорочений)<br>
+    — Прикріпи screen recording бота (відео з Reel #2 без watermark)<br>
+    — Посилання: <code>t.me/CasamareBeautyBot?start=fb_w2</code><br><br>
+    <strong>Чому Facebook зараз не пріоритет:</strong><br>
+    Органічне охоплення Facebook-сторінок — 2–5% підписників. До 50 підписників = 1–2 перегляди. Але сторінка потрібна для майбутнього Meta Ads таргету (Фаза 2–3). Краще засіяти зараз.<br><br>
+    <strong>Що НЕ робити:</strong> не вкладати більше 20 хв/тиждень у Facebook до Фази 2.`
+  },
+  },
+  {
     id: 23, week: 2,
     day: 'Чт', date: '26 черв',
     task: 'TikTok: дублі Reels #1, #2, #3 — завантажити без watermark',
@@ -907,7 +945,7 @@ const WEEK_META = {
   4: { label: 'Тиждень 4 · 7–11 липня', focus: 'Розбір місяця: відгук юзера + власний кейс + корекція стратегії' }
 };
 
-const TAG_LABELS = { reels: 'Reels', tg: 'Telegram', analytics: 'Аналітика', research: 'Дослідження', review: 'Розбір', tiktok: 'TikTok' };
+const TAG_LABELS = { reels: 'Reels', tg: 'Telegram', analytics: 'Аналітика', research: 'Дослідження', review: 'Розбір', tiktok: 'TikTok', fb: 'Facebook' };
 
 let state = {};
 let notes = {};
@@ -956,12 +994,14 @@ function updateLeads(val) {
   save();
   document.getElementById('m-leads').textContent = leads;
   document.getElementById('m-tiktok').textContent = countTikTok();
+  document.getElementById('m-fb').textContent = countFb();
 }
 
 function countDone() { return DAYS.filter(d => state[d.id]).length; }
 function countReels() { return DAYS.filter(d => d.tag === 'reels' && state[d.id]).length; }
 function countTg() { return DAYS.filter(d => d.tag === 'tg' && state[d.id]).length; }
 function countTikTok() { return DAYS.filter(d => d.tag === 'tiktok' && state[d.id]).length; }
+function countFb() { return DAYS.filter(d => d.tag === 'fb' && state[d.id]).length; }
 
 function updateMetrics() {
   const done = countDone();
@@ -971,6 +1011,7 @@ function updateMetrics() {
   document.getElementById('m-tg').textContent = countTg();
   document.getElementById('m-leads').textContent = leads;
   document.getElementById('m-tiktok').textContent = countTikTok();
+  document.getElementById('m-fb').textContent = countFb();
   const pct = Math.round((done / total) * 100);
   document.getElementById('pct-label').textContent = done + ' / ' + total;
   document.getElementById('progress-fill').style.width = pct + '%';
@@ -996,6 +1037,7 @@ function render() {
     else if (currentFilter === 'analytics') days = days.filter(d => d.tag === 'analytics' || d.tag === 'review');
     else if (currentFilter === 'research') days = days.filter(d => d.tag === 'research');
     else if (currentFilter === 'tiktok') days = days.filter(d => d.tag === 'tiktok');
+    else if (currentFilter === 'fb') days = days.filter(d => d.tag === 'fb');
     if (!days.length) return;
 
     const block = document.createElement('div');
