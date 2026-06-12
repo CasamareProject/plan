@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casamare Beauty — План липень 2026</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #ffffff;
+    --bg2: #f7f7f5;
+    --bg3: #f0f0ec;
+    --text: #1a1a18;
+    --text2: #6b6b66;
+    --text3: #9e9e98;
+    --border: rgba(0,0,0,0.1);
+    --border2: rgba(0,0,0,0.18);
+    --green: #1D9E75;
+    --green-bg: #E1F5EE;
+    --green-text: #0F6E56;
+    --blue-bg: #E6F1FB;
+    --blue-text: #0C447C;
+    --purple-bg: #EEEDFE;
+    --purple-text: #3C3489;
+    --amber-bg: #FAEEDA;
+    --amber-text: #633806;
+    --coral-bg: #FAECE7;
+    --coral-text: #712B13;
+    --teal-bg: #E1F5EE;
+    --teal-text: #0F6E56;
+    --radius: 8px;
+    --radius-lg: 12px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1c1a;
+      --bg2: #252523;
+      --bg3: #2e2e2c;
+      --text: #f0f0ec;
+      --text2: #a0a09a;
+      --text3: #6b6b66;
+      --border: rgba(255,255,255,0.1);
+      --border2: rgba(255,255,255,0.18);
+      --green-bg: #0a3d2c;
+      --green-text: #5DCAA5;
+      --blue-bg: #0c2d4a;
+      --blue-text: #85B7EB;
+      --purple-bg: #1e1b4a;
+      --purple-text: #AFA9EC;
+      --amber-bg: #3d2a08;
+      --amber-text: #FAC775;
+      --coral-bg: #3d1a0a;
+      --coral-text: #F0997B;
+      --teal-bg: #0a3d2c;
+      --teal-text: #5DCAA5;
+    }
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg3);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 16px 48px;
+  }
+
+  /* Header */
+  .header {
+    padding: 28px 0 20px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 24px;
+  }
+  .header-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.3px;
+  }
+  .header p {
+    font-size: 13px;
+    color: var(--text2);
+    margin-top: 4px;
+  }
+  .phase-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: var(--green-bg);
+    color: var(--green-text);
+    white-space: nowrap;
+    margin-top: 4px;
+  }
+  .phase-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+  }
+
+  /* Metrics */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .metric-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 14px 16px;
+    text-align: center;
+  }
+  .metric-card .val {
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--text);
+    display: block;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+  }
+  .metric-card .lbl {
+    font-size: 12px;
+    color: var(--text2);
+    display: block;
+    margin-top: 3px;
+  }
+  .metric-card .sub {
+    font-size: 11px;
+    color: var(--text3);
+    display: block;
+    margin-top: 1px;
+  }
+
+  /* Leads input */
+  .leads-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    margin-bottom: 16px;
+  }
+  .leads-row label {
+    font-size: 13px;
+    color: var(--text2);
+    flex: 1;
+  }
+  .leads-row input {
+    width: 64px;
+    padding: 6px 10px;
+    border: 1px solid var(--border2);
+    border-radius: var(--radius);
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    background: var(--bg2);
+    color: var(--text);
+    outline: none;
+  }
+  .leads-row input:focus {
+    border-color: var(--green);
+  }
+  .leads-hint { font-size: 11px; color: var(--text3); }
+
+  /* Progress bar */
+  .progress-wrap {
+    margin-bottom: 20px;
+  }
+  .progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--text2);
+    margin-bottom: 6px;
+  }
+  .progress-bar {
+    height: 8px;
+    background: #e0e0da;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+  }
+  @media (prefers-color-scheme: dark) {
+    .progress-bar { background: #3a3a38; }
+  }
+  .progress-fill {
+    position: absolute;
+    top: 0; left: 0;
+    height: 8px;
+    background: #1D9E75;
+    border-radius: 4px;
+    transition: width 0.35s ease;
+    min-width: 0;
+  }
+
+  /* Filters */
+  .filter-bar {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+  .filter-btn {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border2);
+    background: none;
+    color: var(--text2);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .filter-btn:hover { background: var(--bg2); color: var(--text); }
+  .filter-btn.active {
+    background: var(--text);
+    color: var(--bg);
+    border-color: var(--text);
+  }
+
+  /* Week section */
+  .week-block { margin-bottom: 32px; }
+  .week-header {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .week-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text2);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+  }
+  .week-focus {
+    font-size: 12px;
+    color: var(--text3);
+    font-weight: 400;
+  }
+
+  /* Day row */
+  .day-row {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    margin-bottom: 6px;
+    overflow: hidden;
+    transition: border-color 0.15s, opacity 0.2s;
+  }
+  .day-row:hover { border-color: var(--border2); }
+  .day-row.done { opacity: 0.55; }
+
+  .day-row-top {
+    display: grid;
+    grid-template-columns: 104px 1fr auto;
+    align-items: start;
+    gap: 12px;
+    padding: 12px 14px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .day-date {
+    padding-top: 1px;
+  }
+  .day-day {
+    font-size: 11px;
+    color: var(--text3);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .day-date-num {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.3;
+    margin-top: 1px;
+  }
+
+  .day-content {}
+  .day-task {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.4;
+    font-weight: 500;
+  }
+  .done .day-task {
+    text-decoration: line-through;
+    color: var(--text3);
+  }
+  .day-metric {
+    font-size: 12px;
+    color: var(--text2);
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+  .day-utm {
+    font-size: 11px;
+    color: var(--text3);
+    margin-top: 3px;
+    font-family: 'SF Mono', 'Fira Code', 'Fira Mono', monospace;
+  }
+  .expand-hint {
+    font-size: 11px;
+    color: var(--text3);
+    margin-top: 5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+  }
+  .expand-hint .arrow { transition: transform 0.2s; display: inline-block; }
+  .day-row.expanded .expand-hint .arrow { transform: rotate(180deg); }
+
+  .day-side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    padding-top: 2px;
+  }
+
+  .tag {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 20px;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+  }
+  .tag-reels { background: var(--purple-bg); color: var(--purple-text); }
+  .tag-tg { background: var(--blue-bg); color: var(--blue-text); }
+  .tag-analytics { background: var(--amber-bg); color: var(--amber-text); }
+  .tag-research { background: var(--teal-bg); color: var(--teal-text); }
+  .tag-review { background: var(--coral-bg); color: var(--coral-text); }
+
+  .check-btn {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 1.5px solid var(--border2);
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: transparent;
+    font-size: 13px;
+    transition: all 0.15s;
+    flex-shrink: 0;
+  }
+  .check-btn:hover { border-color: var(--green); }
+  .check-btn.checked {
+    background: var(--green);
+    border-color: var(--green);
+    color: #fff;
+  }
+
+  /* Detail panel */
+  .day-detail {
+    display: none;
+    padding: 0 14px 14px 14px;
+    border-top: 1px solid var(--border);
+    margin-top: 0;
+  }
+  .day-row.expanded .day-detail { display: block; }
+  .detail-inner {
+    padding-top: 12px;
+    font-size: 13px;
+    color: var(--text2);
+    line-height: 1.65;
+  }
+  .detail-inner strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* Notes area */
+  .day-notes-wrap {
+    margin-top: 10px;
+  }
+  .day-notes-label {
+    font-size: 11px;
+    color: var(--text3);
+    margin-bottom: 4px;
+    display: block;
+  }
+  .day-notes {
+    width: 100%;
+    min-height: 56px;
+    padding: 8px 10px;
+    border: 1px solid var(--border2);
+    border-radius: var(--radius);
+    background: var(--bg2);
+    color: var(--text);
+    font-size: 13px;
+    font-family: inherit;
+    resize: vertical;
+    outline: none;
+    line-height: 1.5;
+  }
+  .day-notes:focus { border-color: var(--green); }
+  .day-notes::placeholder { color: var(--text3); }
+
+  /* Legend */
+  .legend {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    font-size: 12px;
+    color: var(--text2);
+  }
+  .legend-item { display: flex; align-items: center; gap: 5px; }
+
+  /* Reset */
+  .footer {
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .footer-note { font-size: 12px; color: var(--text3); }
+  .reset-btn {
+    font-size: 12px;
+    color: var(--text3);
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 5px 12px;
+    cursor: pointer;
+  }
+  .reset-btn:hover { color: #c0392b; border-color: #c0392b; }
+
+  @media (max-width: 520px) {
+    .day-row-top { grid-template-columns: 80px 1fr auto; gap: 8px; }
+    .metrics-grid { grid-template-columns: 1fr 1fr; }
+    .header h1 { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <div class="header-top">
+      <div>
+        <h1>Casamare Beauty · Щоденний план</h1>
+        <p>16 червня — 11 липня 2026 · 22 робочі дні</p>
+      </div>
+      <span class="phase-badge">Фаза 1 — Validation</span>
+    </div>
+  </div>
+
+  <div class="metrics-grid" id="metrics-grid">
+    <div class="metric-card">
+      <span class="val" id="m-done">0</span>
+      <span class="lbl">виконано задач</span>
+      <span class="sub" id="m-done-sub">з 22 днів</span>
+    </div>
+    <div class="metric-card">
+      <span class="val" id="m-reels">0</span>
+      <span class="lbl">Reels опубліковано</span>
+      <span class="sub">ціль: 8 за місяць</span>
+    </div>
+    <div class="metric-card">
+      <span class="val" id="m-tg">0</span>
+      <span class="lbl">TG активності</span>
+      <span class="sub">ціль: 5 вступів</span>
+    </div>
+    <div class="metric-card">
+      <span class="val" id="m-leads">0</span>
+      <span class="lbl">нових лідів</span>
+      <span class="sub">ціль: ≥15</span>
+    </div>
+  </div>
+
+  <div class="leads-row">
+    <label>Кількість нових лідів (вводити вручну з /tst_leads):</label>
+    <input type="number" id="leads-input" min="0" value="0" placeholder="0">
+    <span class="leads-hint">оновлюється щотижня</span>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-label">
+      <span>Прогрес місяця</span>
+      <span id="pct-label">0 / 22</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+    </div>
+  </div>
+
+  <div class="filter-bar" id="filter-bar">
+    <button class="filter-btn active" data-filter="all">Всі дні</button>
+    <button class="filter-btn" data-filter="pending">Не виконані</button>
+    <button class="filter-btn" data-filter="reels">Reels</button>
+    <button class="filter-btn" data-filter="tg">Telegram</button>
+    <button class="filter-btn" data-filter="analytics">Аналітика</button>
+    <button class="filter-btn" data-filter="research">Дослідження</button>
+  </div>
+
+  <div id="plan"></div>
+
+  <div class="footer">
+    <span class="footer-note">Прогрес зберігається в браузері автоматично · Casamare Beauty 2026</span>
+    <button class="reset-btn" onclick="resetAll()">Скинути прогрес</button>
+  </div>
+
+</div>
+
+<script>
+const STORAGE_KEY = 'casamare_plan_v2';
+
+const DAYS = [
+  {
+    id: 1, week: 1,
+    day: 'Пн', date: '16 черв',
+    task: 'Протестувати онбординг /tst_onboarding — пройти як новий юзер',
+    metric: 'Ціль: completion < 3 хв, записати де є тертя',
+    utm: null, tag: 'analytics',
+    detail: `Запусти <strong>/tst_onboarding</strong> в боті. Пройди весь флоу як новий юзер — не як розробник.<br><br>
+    <strong>Що фіксувати:</strong><br>
+    — Де затримуєшся або перечитуєш двічі?<br>
+    — Де хочеться натиснути «назад»?<br>
+    — Скільки хвилин від /start до «Клієнта збережено»?<br><br>
+    <strong>Ціль: &lt; 3 хвилини.</strong> Якщо є тертя — записати у нотатки нижче, але НЕ виправляти зараз. Фаза 1 — контент, не фічі.`
+  },
+  {
+    id: 2, week: 1,
+    day: 'Вт', date: '17 черв',
+    task: 'Підготувати Instagram профіль до запуску контенту',
+    metric: 'Ціль: біо оновлено, UTM-посилання в біо встановлено, хайлайти є',
+    utm: 'ig_bio', tag: 'research',
+    detail: `Підготовка профілю перед першим Reel — займає 1 раз, але впливає на всі наступні публікації.<br><br>
+    <strong>Чеклист:</strong><br>
+    — Біо: хто ти, для кого бот, 1 речення. Приклад: «Telegram-бот для майстрів краси 💜 Клієнтська база + нагадування без нових додатків»<br>
+    — Посилання в біо: <code>t.me/CasamareBeautyBot?start=ig_bio</code><br>
+    — Хайлайт «Як це працює»: 3–5 сторіз зі screen recording (знімеш пізніше)<br>
+    — Аватар: чіткий, впізнаваний логотип або фото<br><br>
+    Перевір що посилання з utm <strong>ig_bio</strong> трекується в Admin → 📈 Ліди після першого кліку.`
+  },
+  {
+    id: 3, week: 1,
+    day: 'Ср', date: '18 черв',
+    task: 'Reel #1: «Де ти зараз ведеш клієнтів?» — опитування-провокація',
+    metric: 'Ціль: охоплення > 200, збережень > 10, посилання в біо ig_bio',
+    utm: 'ig_reels_w1', tag: 'reels',
+    detail: `<strong>Формат: опитування або монолог 30–45 сек.</strong><br><br>
+    Варіанти у відповіді: «У голові», «Телефонна книга», «Excel», «Маю CRM».<br>
+    Сценарій: «Я спитала 50 майстрів як вони ведуть клієнтів. Більшість відповіли...» → показати цифри → «А є варіант простіший — посилання в біо».<br><br>
+    <strong>Технічно:</strong> UTM у посиланні біо: <code>t.me/CasamareBeautyBot?start=ig_bio</code><br>
+    В описі Reel: <code>t.me/CasamareBeautyBot?start=ig_reels_w1</code><br>
+    Публікувати о 10:00–12:00 або 18:00–20:00 — найвищий органічний охоплення.<br><br>
+    <em>Кейс: beauty-app через опитування-Reels набрав 400k+ охоплення органічно в перший місяць (NoGood, 2025).</em>`
+  },
+  {
+    id: 4, week: 1,
+    day: 'Чт', date: '19 черв',
+    task: 'Telegram пост: особиста історія засновника — чому зробив бот',
+    metric: 'Ціль: пост у ≥1 спільноті, UTM tg_chat_launch відстежується в /tst_leads',
+    utm: 'tg_chat_launch', tag: 'tg',
+    detail: `<strong>Текст від першої особи</strong>, 150–250 слів. Структура:<br>
+    1. Яка була проблема (особиста — «я забував нагадати клієнтам...»)<br>
+    2. Що спробував спочатку (Excel, нотатки, Telegram-чати) — і чому не підійшло<br>
+    3. Чому вирішив зробити бот, а не використовувати готове<br>
+    4. Що вийшло — і запрошення спробувати<br><br>
+    <strong>Без рекламного тону.</strong> Пост-знайомство, не оголошення.<br>
+    Посилання: <code>t.me/CasamareBeautyBot?start=tg_chat_launch</code><br><br>
+    Де публікувати: у власному Telegram-каналі або в спільноті де ти вже є учасником понад 2 тижні.`
+  },
+  {
+    id: 5, week: 1,
+    day: 'Пт', date: '20 черв',
+    task: 'Вступити в 3 Telegram-спільноти майстрів (тільки учасник)',
+    metric: 'Ціль: 3 групи знайдені і доєднані, записати назви нижче',
+    utm: null, tag: 'tg',
+    detail: `<strong>Пошукові запити в Telegram:</strong> «майстри манікюр Україна», «nail masters UA», «лешмейкери UA», «майстри краси Дніпро», «бьюті майстри Київ».<br><br>
+    <strong>Критерії вибору групи:</strong><br>
+    — Активність: ≥1 пост на день<br>
+    — Учасників: ≥200 (реальних, не ботів)<br>
+    — Тема: майстри між собою, а не для клієнтів<br><br>
+    <strong>Перші 2–3 тижні — тільки слухати і коментувати.</strong> Жодного реклами, жодних посилань. Перший крок — стати «своїм».<br><br>
+    <em>Кейс: community engagement як канал залучення дає CAC $0–10 — найнижчий серед усіх каналів (SoftwareSeni, 2026).</em>`
+  },
+  {
+    id: 6, week: 2,
+    day: 'Пн', date: '23 черв',
+    task: 'Вступити ще в 2 спільноти (довести до 5), залишити коментарі в кожній',
+    metric: 'Ціль: 5 груп у списку, ≥1 корисний коментар в кожній за тиждень',
+    utm: null, tag: 'tg',
+    detail: `Дописати ще 2 спільноти до 5 загалом.<br><br>
+    <strong>Тактика коментарів:</strong> шукай питання про ведення клієнтів, нагадування, організацію. Відповідай конкретно і корисно — без згадки бота. Наприклад: «Я веду нагадування через бот у Telegram — зручно бо всі там і так сидять».<br><br>
+    Мета цього тижня — щоб тебе запам'ятали як людину з досвідом, до якої можна звернутись.`
+  },
+  {
+    id: 7, week: 2,
+    day: 'Вт', date: '24 черв',
+    task: 'Reel #2: screen recording — «Додаю клієнта за 30 секунд»',
+    metric: 'Ціль: охоплення > 300, досмотри > 50%',
+    utm: 'ig_reels_w2', tag: 'reels',
+    detail: `<strong>Ніяких слів у кадрі — тільки музика і субтитри.</strong><br><br>
+    Сценарій запису екрану:<br>
+    1. Відкриваємо бот<br>
+    2. Кнопка «Мої клієнти» → «Додати»<br>
+    3. Вводимо ім'я, телефон<br>
+    4. «Збережено» — і клієнт є в базі<br>
+    Весь процес: 25–35 секунд реального часу.<br><br>
+    Субтитр: «30 секунд — і клієнт у базі. Без додатків, прямо в Telegram.»<br>
+    UTM в описі: <code>t.me/CasamareBeautyBot?start=ig_reels_w2</code><br>
+    <strong>Субтитри обов'язково</strong> — 85% переглядів Instagram Reels без звуку (Meta, 2024).`
+  },
+  {
+    id: 8, week: 2,
+    day: 'Ср', date: '25 черв',
+    task: 'Reel #3: «3 клієнти яких я б втратив без нагадування» — від першої особи',
+    metric: 'Ціль: охоплення > 400, коментарів > 5 («і в мене так»)',
+    utm: 'ig_reels_case', tag: 'reels',
+    detail: `<strong>Від першої особи — твоя особиста історія.</strong> Без чужого відгуку.<br><br>
+    Сценарій: «Поки не вів базу, троє клієнтів пропали. Не через якість — просто забув нагадати. Одна потім написала: "думала ти зайнятий". Тепер бот нагадує сам — і мені, і клієнту якщо треба».<br><br>
+    Ключова фраза: <em>«68% клієнтів йдуть не через якість — вони просто відчули байдужість» (Bain & Company).</em><br><br>
+    UTM: <code>t.me/CasamareBeautyBot?start=ig_reels_case</code><br>
+    Формат: монолог обличчям до камери або текст на екрані — обидва працюють.<br>
+    <strong>Субтитри обов'язково.</strong>`
+  },
+  {
+    id: 9, week: 2,
+    day: 'Чт', date: '26 черв',
+    task: 'Перевірити /tst_leads — перші дані по джерелах',
+    metric: 'Ціль: знаємо звідки прийшли реєстрації, є хоч 1 незнайомий лід',
+    utm: null, tag: 'analytics',
+    detail: `<strong>Admin → 📈 Ліди → Статистика або /tst_leads</strong><br><br>
+    Що фіксувати:<br>
+    — referral_source по кожному юзеру (який UTM спрацював)<br>
+    — onboarding completion rate (ціль > 70%)<br>
+    — aha-rate 48h: скільки % юзерів додали хоч 1 клієнта за 48 год (ціль ≥ 50%)<br><br>
+    Оновити лічильник «нових лідів» у верхньому полі цього плану.<br>
+    Якщо 0 незнайомих лідів — нормально для кінця 2-го тижня. Продовжуємо контент.`
+  },
+  {
+    id: 10, week: 2,
+    day: 'Пт', date: '27 черв',
+    task: 'Reel #4: «Чому записи в Telegram — це не CRM»',
+    metric: 'Ціль: охоплення > 300, збережень > 15',
+    utm: 'ig_reels_w2b', tag: 'reels',
+    detail: `<strong>Формат «Було / Стало».</strong><br><br>
+    Показати хаос: скріни Telegram DM де розкидані записи, «нагадати Олі в п'ятницю» у нотатках телефону, переписка «запиши мене на 15-те» в 12 різних чатах.<br><br>
+    Потім: чистий список клієнтів у боті, автонагадування, «хто давно не був».<br><br>
+    Провокаційна фраза: <em>«Ти пам'ятаєш усіх 60 клієнтів? А що писала Марині 3 місяці тому?»</em><br>
+    UTM: <code>t.me/CasamareBeautyBot?start=ig_reels_w2b</code>`
+  },
+  {
+    id: 11, week: 3,
+    day: 'Пн', date: '30 черв',
+    task: 'Перший «м\'який» пост у 1–2 спільнотах (від першої особи)',
+    metric: 'Ціль: пост не видалено, є ≥3 реакції або відповіді',
+    utm: 'tg_chat_w3', tag: 'tg',
+    detail: `<strong>Публікувати тільки в спільнотах де ти вже 2+ тижні і є своя активність.</strong><br><br>
+    Текст-шаблон:<br>
+    «Привіт! Я розробив Telegram-бот для ведення клієнтської бази — зробив спочатку для себе, тепер тестую з першими майстрами. Безкоштовний тріал 14 днів. Якщо цікаво спробувати — напишіть або ось посилання: [UTM]»<br><br>
+    <strong>Ніколи не роби копіпаст в 5 груп одночасно</strong> — всі бачать і виглядає як спам. Одна-дві групи, природний тон.<br>
+    UTM: <code>t.me/CasamareBeautyBot?start=tg_chat_w3</code>`
+  },
+  {
+    id: 12, week: 3,
+    day: 'Вт', date: '1 лип',
+    task: 'Reel #5: «Чому я не використовую складні CRM»',
+    metric: 'Ціль: охоплення > 350, ≥2 переходи по utm ig_reels_w3',
+    utm: 'ig_reels_w3', tag: 'reels',
+    detail: `<strong>Порівняння:</strong> показати 3 скріни Integrica/аналогів (перевантажений інтерфейс, меню з 20 пунктів, форма налаштувань) vs 3 скріни бота (чистий список, кнопка «Додати», нагадування).<br><br>
+    Текст: «Integrica — 47 функцій яких я ніколи не використаю. Casamare — тільки те що потрібно майстру-одиночці. Без навчання, без налаштувань. Просто Telegram.»<br><br>
+    Час відео: 30–45 сек.<br>
+    UTM: <code>t.me/CasamareBeautyBot?start=ig_reels_w3</code>`
+  },
+  {
+    id: 13, week: 3,
+    day: 'Ср', date: '2 лип',
+    task: 'Активність у спільнотах — відповісти на питання в кожній групі',
+    metric: 'Ціль: ≥8 корисних відповідей цього тижня, 0 згадок бота',
+    utm: null, tag: 'tg',
+    detail: `Шукай питання про:<br>
+    — «як ви нагадуєте клієнтам про запис?»<br>
+    — «де ведете базу?»<br>
+    — «як відслідковуєте хто давно не приходив?»<br><br>
+    Відповідай конкретно і корисно. Можна згадати «я використовую бот» але не рекламувати — хай самі запитають.<br><br>
+    Якщо хтось запитує напряму про бота — даєш посилання з UTM: <code>tg_chat_organic</code>.`
+  },
+  {
+    id: 14, week: 3,
+    day: 'Чт', date: '3 лип',
+    task: 'Reel #6: «Скільки клієнтів ти втратила за рік?» — цифри',
+    metric: 'Ціль: охоплення > 500, збережень > 20 (найвірусніший формат)',
+    utm: 'ig_reels_w3b', tag: 'reels',
+    detail: `<strong>Формат: цифри + провокація.</strong><br><br>
+    Структура:<br>
+    «Якщо майстер не нагадує клієнту — він іде до конкурента. Факт: 68% клієнтів йдуть не через якість, а через байдужість (Bain & Company). 1 пропущений клієнт = ~400 грн. 10 клієнтів на місяць = 4000 грн. За рік — 48 000 грн.»<br><br>
+    Запитання в кінці: «Скільки клієнтів ти "відпустила" цього року?»<br><br>
+    UTM: <code>t.me/CasamareBeautyBot?start=ig_reels_w3b</code><br>
+    <strong>Субтитри обов'язково.</strong> Великий шрифт для цифр.`
+  },
+  {
+    id: 15, week: 3,
+    day: 'Пт', date: '4 лип',
+    task: 'Зв\'язатись з 3 юзерами чатом — дізнатись що болить (без продажу)',
+    metric: 'Ціль: 3 відповіді, 5+ інсайтів записано в нотатки',
+    utm: null, tag: 'research',
+    detail: `<strong>STRATEGY.md:</strong> «3 розмови з юзерами щомісяця — питати що болить».<br><br>
+    Формат: коротке повідомлення в Telegram, не дзвінок. Люди охочіше відповідають текстом.<br><br>
+    Шаблон: «Привіт! Ти вже N тижнів користуєшся ботом. Що подобається і чого не вистачає? Навіть 1–2 речення дуже допоможуть».<br><br>
+    <strong>Питання (по одному, не списком):</strong><br>
+    1. Що використовуєш найчастіше?<br>
+    2. Що заважає або здається незручним?<br>
+    3. За що готовий(а) платити — і за що ні?<br><br>
+    <strong>НЕ продавай під час розмови.</strong> Записуй цитати дослівно — вони стануть матеріалом для контенту.`
+  },
+  {
+    id: 16, week: 3,
+    day: 'Пт', date: '4 лип',
+    task: 'Щотижневий аналіз: /tst_leads + Admin CSV + корекція контенту',
+    metric: 'Ціль: топ-1 канал відомий, числа записані',
+    utm: null, tag: 'analytics',
+    detail: `<strong>15 хвилин. Щоп'ятниці — ритуал.</strong><br><br>
+    Відкрити:<br>
+    — /tst_leads або Admin → 📈 Ліди (звідки прийшли юзери по UTM)<br>
+    — Admin → Статистика (скільки нових реєстрацій за тиждень)<br>
+    — Admin CSV (хто зареєструвався але не активний → onboarding drop-off)<br><br>
+    Питання для аналізу:<br>
+    — Який Reel дав найбільше переходів?<br>
+    — Де відвал у воронці (до чи після онбордингу)?<br>
+    — Скорегувати теми Reels тижня 4 відповідно до даних.<br><br>
+    Оновити лічильник лідів у цьому файлі.`
+  },
+  {
+    id: 17, week: 4,
+    day: 'Пн', date: '7 лип',
+    task: 'Reel #7: «Місяць з ботом — що змінилось» (мій особистий результат)',
+    metric: 'Ціль: охоплення > 600, ≥5 переходів по utm ig_reels_month1',
+    utm: 'ig_reels_month1', tag: 'reels',
+    detail: `<strong>Підсумковий Reel місяця — від першої особи.</strong><br><br>
+    Структура:<br>
+    «Місяць тому я запустив бот і почав вести в ньому клієнтів. Ось що змінилось: [X] нових юзерів зареєструвалися. Бот нагадав [Y] разів. Я більше не тримаю нічого в голові».<br><br>
+    Якщо є цифри з /tst_leads — використай їх. Реальні числа працюють краще за абстракції.<br><br>
+    UTM: <code>t.me/CasamareBeautyBot?start=ig_reels_month1</code><br><br>
+    <em>Кейс: Slack і Notion перші 1000 юзерів отримали через кейси засновників, а не рекламу (Flowjam, 2025).</em>`
+  },
+  {
+    id: 18, week: 4,
+    day: 'Вт', date: '8 лип',
+    task: 'Записати відгук від активного юзера (місяць пройшов — час просити)',
+    metric: 'Ціль: є дозвіл + текст або голосовий відгук отримано',
+    utm: null, tag: 'research',
+    detail: `<strong>Місяць пройшов — тепер юзер бачив реальну цінність і готовий говорити чесно.</strong><br><br>
+    Формат: Telegram-повідомлення, не дзвінок.<br><br>
+    Шаблон: «Привіт! Ти вже місяць користуєшся ботом — дякую! Можу попросити про невелику допомогу? Напиши 1–2 речення: що змінилось для тебе після того як почав(ла) вести базу тут. Це дуже важливо для мене».<br><br>
+    <strong>Дозвіл на публікацію</strong> — обов'язково (скріншот або «так, можна»).<br><br>
+    Матеріал відгуку використаєш у:<br>
+    — Пост у Telegram-спільнотах (день 19)<br>
+    — Хайлайт в Instagram<br>
+    — Наступні Reels місяця 2`
+  },
+  {
+    id: 19, week: 4,
+    day: 'Ср', date: '9 лип',
+    task: 'Пост у спільнотах з особистим кейсом: «Місяць ведення бази — мій досвід»',
+    metric: 'Ціль: ≥5 запитів про посилання, ≥1 новий лід по utm tg_chat_w4',
+    utm: 'tg_chat_w4', tag: 'tg',
+    detail: `<strong>Пост з особистим результатом — не рекламний текст.</strong><br><br>
+    Текст-шаблон:<br>
+    «Місяць тому я запустив Telegram-бота для ведення клієнтської бази. Зробив спочатку для себе — і продовжую використовувати. За місяць: [X] юзерів зареєструвалося, нагадування спрацювали [Y] разів. Якщо хочеш спробувати — ось посилання: [UTM]».<br><br>
+    Якщо до цього моменту є відгук (день 18) — додай 1 цитату.<br><br>
+    Публікувати в 2–3 найактивніших спільнотах з різним інтервалом (не одночасно).<br>
+    UTM: <code>t.me/CasamareBeautyBot?start=tg_chat_w4</code>`
+  },
+  {
+    id: 20, week: 4,
+    day: 'Ср', date: '9 лип',
+    task: 'Reel #8: «Як виглядає твоя клієнтська база через рік» + batch-зйомка',
+    metric: 'Ціль: Reel #8 опублікований + 4–6 відео у черзі для місяця 2',
+    utm: 'ig_reels_w4', tag: 'reels',
+    detail: `<strong>Два завдання одного дня — зйомка вже налаштована, знімаємо більше.</strong><br><br>
+    <strong>Reel #8 — позитивна візія:</strong><br>
+    «Уяви: відкриваєш бот вранці. 12 клієнтів на тижні. 3 яким час написати — бот нагадав. Хто давно не був — список є. Все за 10 секунд». Показати реальні скріни бота.<br>
+    UTM: <code>t.me/CasamareBeautyBot?start=ig_reels_w4</code><br><br>
+    <strong>Batch-зйомка для місяця 2:</strong><br>
+    — «Болі» серія: 3 нові теми з відповідей у спільнотах<br>
+    — Screen recording нових дій у боті<br>
+    — TikTok-дублі кращих Reels місяця 1<br>
+    — Якщо є відгук (день 18) — Reel з цитатою<br><br>
+    Монтаж наступного дня. Публікація: по 3 на тиждень.`
+  },
+  {
+    id: 21, week: 4,
+    day: 'Чт', date: '10 лип',
+    task: 'Розбір місяця: підрахунок лідів, каналів, метрик воронки',
+    metric: 'Ціль: заповнена таблиця в MARKETING.md §11, всі числа відомі',
+    utm: null, tag: 'analytics',
+    detail: `<strong>Зробити повний зріз Фази 1 — 30 хвилин.</strong><br><br>
+    Метрики для запису:<br>
+    — Нові реєстрації за місяць (ціль: ≥15, ≥1 незнайомий)<br>
+    — Onboarding completion rate (ціль: > 70%)<br>
+    — Aha-rate 48h (ціль: ≥ 50%) — % юзерів що додали ≥1 клієнта за 48 год<br>
+    — Топ-3 UTM по кількості переходів<br>
+    — Активні юзери: хто заходив останні 7 днів<br>
+    — Trial → paid (якщо є перші платники)<br><br>
+    Заповнити §11 «Лог кампаній» у MARKETING.md реальними даними.`
+  },
+  {
+    id: 22, week: 4,
+    day: 'Пт', date: '11 лип',
+    task: 'Оновити STRATEGY.md фактами місяця 1 + план на місяць 2',
+    metric: 'Ціль: гіпотези підтверджені або спростовані з конкретними числами',
+    utm: null, tag: 'review',
+    detail: `<strong>Commit: «docs: STRATEGY update — month 1 results»</strong><br><br>
+    Що оновити в STRATEGY.md:<br>
+    — §2 «Поточний стан»: реальна кількість юзерів, MRR (якщо є)<br>
+    — Статус критеріїв переходу до Фази 2: ≥50 реєстрацій? ≥50% aha-rate? ≥1 платна від незнайомця?<br>
+    — Гіпотези що підтвердились (позначити «✅ підтверджено» з датою)<br>
+    — Гіпотези що спростовані (позначити «❌ спростовано» + що замість)<br><br>
+    Записати 3 головні інсайти місяця.<br>
+    Скласти список 3 пріоритетів для місяця 2 на основі даних, не гіпотез.`
+  }
+];
+
+const WEEK_META = {
+  1: { label: 'Тиждень 1 · 16–20 червня', focus: 'Фундамент: тест онбордингу + профіль + перший контент' },
+  2: { label: 'Тиждень 2 · 23–27 червня', focus: 'Контент-машина: 4 Reels + вхід у спільноти' },
+  3: { label: 'Тиждень 3 · 30 черв – 4 липня', focus: 'Activation: перші пости у спільнотах + аналітика' },
+  4: { label: 'Тиждень 4 · 7–11 липня', focus: 'Розбір місяця: відгук юзера + власний кейс + корекція стратегії' }
+};
+
+const TAG_LABELS = { reels: 'Reels', tg: 'Telegram', analytics: 'Аналітика', research: 'Дослідження', review: 'Розбір' };
+
+let state = {};
+let notes = {};
+let leads = 0;
+let currentFilter = 'all';
+
+function storageAvailable() {
+  try { localStorage.setItem('__t__','1'); localStorage.removeItem('__t__'); return true; } catch(e) { return false; }
+}
+
+function load() {
+  try {
+    let raw = null;
+    if (storageAvailable()) raw = localStorage.getItem(STORAGE_KEY);
+    else if (typeof sessionStorage !== 'undefined') raw = sessionStorage.getItem(STORAGE_KEY);
+    if (raw) {
+      const d = JSON.parse(raw);
+      state = d.state || {};
+      notes = d.notes || {};
+      leads = d.leads || 0;
+    }
+  } catch(e) {}
+  document.getElementById('leads-input').value = leads;
+}
+
+function save() {
+  const payload = JSON.stringify({ state, notes, leads });
+  try { if (storageAvailable()) { localStorage.setItem(STORAGE_KEY, payload); return; } } catch(e) {}
+  try { if (typeof sessionStorage !== 'undefined') sessionStorage.setItem(STORAGE_KEY, payload); } catch(e) {}
+}
+
+function toggle(id) {
+  state[id] = !state[id];
+  save();
+  render();
+  updateMetrics();
+}
+
+function saveNote(id, val) {
+  notes[id] = val;
+  save();
+}
+
+function updateLeads(val) {
+  leads = parseInt(val) || 0;
+  save();
+  document.getElementById('m-leads').textContent = leads;
+}
+
+function countDone() { return DAYS.filter(d => state[d.id]).length; }
+function countReels() { return DAYS.filter(d => d.tag === 'reels' && state[d.id]).length; }
+function countTg() { return DAYS.filter(d => d.tag === 'tg' && state[d.id]).length; }
+
+function updateMetrics() {
+  const done = countDone();
+  const total = DAYS.length;
+  document.getElementById('m-done').textContent = done;
+  document.getElementById('m-reels').textContent = countReels();
+  document.getElementById('m-tg').textContent = countTg();
+  document.getElementById('m-leads').textContent = leads;
+  const pct = Math.round((done / total) * 100);
+  document.getElementById('pct-label').textContent = done + ' / ' + total;
+  document.getElementById('progress-fill').style.width = pct + '%';
+}
+
+function setFilter(f) {
+  currentFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.filter === f);
+  });
+  render();
+}
+
+function render() {
+  const container = document.getElementById('plan');
+  container.innerHTML = '';
+
+  [1,2,3,4].forEach(w => {
+    let days = DAYS.filter(d => d.week === w);
+    if (currentFilter === 'pending') days = days.filter(d => !state[d.id]);
+    else if (currentFilter === 'reels') days = days.filter(d => d.tag === 'reels');
+    else if (currentFilter === 'tg') days = days.filter(d => d.tag === 'tg');
+    else if (currentFilter === 'analytics') days = days.filter(d => d.tag === 'analytics' || d.tag === 'review');
+    else if (currentFilter === 'research') days = days.filter(d => d.tag === 'research');
+    if (!days.length) return;
+
+    const block = document.createElement('div');
+    block.className = 'week-block';
+
+    const wh = document.createElement('div');
+    wh.className = 'week-header';
+    wh.innerHTML = `<span class="week-title">${WEEK_META[w].label}</span><span class="week-focus">— ${WEEK_META[w].focus}</span>`;
+    block.appendChild(wh);
+
+    days.forEach(d => {
+      const done = !!state[d.id];
+      const row = document.createElement('div');
+      row.className = 'day-row' + (done ? ' done' : '');
+      row.id = 'row-' + d.id;
+
+      row.innerHTML = `
+        <div class="day-row-top" onclick="toggleExpand(${d.id})">
+          <div class="day-date">
+            <div class="day-day">${d.day}</div>
+            <div class="day-date-num">${d.date}</div>
+          </div>
+          <div class="day-content">
+            <div class="day-task">${d.task}</div>
+            <div class="day-metric">${d.metric}</div>
+            ${d.utm ? `<div class="day-utm">UTM: ${d.utm}</div>` : ''}
+            <div class="expand-hint">деталі <span class="arrow">▾</span></div>
+          </div>
+          <div class="day-side">
+            <span class="tag tag-${d.tag}">${TAG_LABELS[d.tag]}</span>
+            <button class="check-btn ${done ? 'checked' : ''}"
+              onclick="event.stopPropagation(); toggle(${d.id})"
+              title="${done ? 'Скасувати виконання' : 'Позначити виконаним'}">
+              ${done ? '✓' : ''}
+            </button>
+          </div>
+        </div>
+        <div class="day-detail">
+          <div class="detail-inner">${d.detail}</div>
+          <div class="day-notes-wrap">
+            <span class="day-notes-label">Нотатки / фактичний результат:</span>
+            <textarea class="day-notes" placeholder="Що зробив, які числа, інсайти..." 
+              oninput="saveNote(${d.id}, this.value)">${notes[d.id] || ''}</textarea>
+          </div>
+        </div>
+      `;
+      block.appendChild(row);
+    });
+
+    container.appendChild(block);
+  });
+}
+
+function toggleExpand(id) {
+  const row = document.getElementById('row-' + id);
+  if (row) row.classList.toggle('expanded');
+}
+
+function resetAll() {
+  if (confirm('Скинути весь прогрес? Нотатки теж видаляться.')) {
+    state = {}; notes = {}; leads = 0;
+    document.getElementById('leads-input').value = 0;
+    save();
+    render();
+    updateMetrics();
+  }
+}
+
+document.getElementById('filter-bar').addEventListener('click', e => {
+  if (e.target.classList.contains('filter-btn')) {
+    setFilter(e.target.dataset.filter);
+  }
+});
+
+document.getElementById('leads-input').addEventListener('input', e => {
+  updateLeads(e.target.value);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  load();
+  render();
+  updateMetrics();
+});
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+  load();
+  render();
+  updateMetrics();
+}
+</script>
+
+</body>
+</html>
