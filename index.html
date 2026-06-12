@@ -357,6 +357,7 @@
   .tag-analytics { background: var(--amber-bg); color: var(--amber-text); }
   .tag-research { background: var(--teal-bg); color: var(--teal-text); }
   .tag-review { background: var(--coral-bg); color: var(--coral-text); }
+  .tag-tiktok { background: #f0e6ff; color: #5b21b6; }
 
   .check-btn {
     width: 26px;
@@ -485,7 +486,7 @@
     <div class="metric-card">
       <span class="val" id="m-done">0</span>
       <span class="lbl">виконано задач</span>
-      <span class="sub" id="m-done-sub">з 22 днів</span>
+      <span class="sub" id="m-done-sub">з 25 днів</span>
     </div>
     <div class="metric-card">
       <span class="val" id="m-reels">0</span>
@@ -496,6 +497,11 @@
       <span class="val" id="m-tg">0</span>
       <span class="lbl">TG активності</span>
       <span class="sub">ціль: 5 вступів</span>
+    </div>
+    <div class="metric-card">
+      <span class="val" id="m-tiktok">0</span>
+      <span class="lbl">TikTok відео</span>
+      <span class="sub">ціль: 8 за місяць</span>
     </div>
     <div class="metric-card">
       <span class="val" id="m-leads">0</span>
@@ -527,6 +533,7 @@
     <button class="filter-btn" data-filter="tg">Telegram</button>
     <button class="filter-btn" data-filter="analytics">Аналітика</button>
     <button class="filter-btn" data-filter="research">Дослідження</button>
+    <button class="filter-btn" data-filter="tiktok">TikTok</button>
   </div>
 
   <div id="plan"></div>
@@ -848,16 +855,59 @@ const DAYS = [
     Записати 3 головні інсайти місяця.<br>
     Скласти список 3 пріоритетів для місяця 2 на основі даних, не гіпотез.`
   }
+  {
+    id: 23, week: 2,
+    day: 'Чт', date: '26 черв',
+    task: 'TikTok: дублі Reels #1, #2, #3 — завантажити без watermark',
+    metric: 'Ціль: 3 відео опубліковані, UTM tt_w2 в кожному',
+    utm: 'tt_w2', tag: 'tiktok',
+    detail: `<strong>Стратегія з MARKETING.md:</strong> TikTok — той самий контент що й Reels, просто дублювати. Окремо нічого знімати не треба.<br><br>
+    <strong>Як правильно дублювати:</strong><br>
+    — Завантажуй оригінал без watermark Instagram (через SnapInsta або SaveIG)<br>
+    — Обрізай під TikTok формат якщо треба (9:16, до 60 сек)<br>
+    — Субтитри вже є — нічого не змінюй<br>
+    — Опис: той самий текст + <code>t.me/CasamareBeautyBot?start=tt_w2</code><br><br>
+    <strong>Різниця аудиторії:</strong> TikTok — молодші майстри 18–28. Той самий контент може зайти краще ніж в Instagram завдяки алгоритму нових акаунтів.<br><br>
+    <em>Кейс: beauty app через TikTok дубліювання Reels контенту набрав 3.5M+ органічних переглядів за 6 міс без бюджету (NoGood, 2025).</em>`
+  },
+  {
+    id: 24, week: 3,
+    day: 'Вт', date: '1 лип',
+    task: 'TikTok: дублі Reels #4, #5 — завантажити без watermark',
+    metric: 'Ціль: 2 відео опубліковані, UTM tt_w3 в кожному',
+    utm: 'tt_w3', tag: 'tiktok',
+    detail: `Дублюй Reels #4 («Чому записи в Telegram — це не CRM») і #5 («Чому я не використовую складні CRM»).<br><br>
+    <strong>Чеклист публікації:</strong><br>
+    — Завантаж без watermark<br>
+    — Заголовок: перші 2–3 слова мають зачепити (TikTok показує перший рядок у стрічці)<br>
+    — Хештеги: #манікюр #майстерманікюру #бьютімайстер #crm #організація — 5–7 штук<br>
+    — Посилання в біо TikTok: <code>t.me/CasamareBeautyBot?start=tt_bio</code><br>
+    — UTM в описі: <code>tt_w3</code><br><br>
+    Перевірити /tst_leads після тижня — чи є переходи з TikTok.`
+  },
+  {
+    id: 25, week: 4,
+    day: 'Вт', date: '8 лип',
+    task: 'TikTok: дублі Reels #6, #7, #8 + аналіз що зайшло краще',
+    metric: 'Ціль: 3 відео опубліковані, порівняти охоплення TikTok vs Instagram',
+    utm: 'tt_w4', tag: 'tiktok',
+    detail: `Дублюй Reels #6 (цифри про втрачених клієнтів), #7 (місяць з ботом), #8 (візія через рік).<br><br>
+    <strong>Аналіз наприкінці місяця:</strong><br>
+    — Порівняй охоплення однакових відео на TikTok vs Instagram<br>
+    — Який канал дав більше переходів у бот? (дивись /tst_leads — tt_* vs ig_*)<br>
+    — Якщо TikTok дає більше — у місяці 2 знімати вертикальне відео одразу під TikTok-формат<br><br>
+    UTM: <code>t.me/CasamareBeautyBot?start=tt_w4</code>`
+  },
 ];
 
 const WEEK_META = {
   1: { label: 'Тиждень 1 · 16–20 червня', focus: 'Фундамент: тест онбордингу + профіль + перший контент' },
-  2: { label: 'Тиждень 2 · 23–27 червня', focus: 'Контент-машина: 4 Reels + вхід у спільноти' },
+  2: { label: 'Тиждень 2 · 23–27 червня', focus: 'Контент-машина: 4 Reels + TikTok дублі + вхід у спільноти' },
   3: { label: 'Тиждень 3 · 30 черв – 4 липня', focus: 'Activation: перші пости у спільнотах + аналітика' },
   4: { label: 'Тиждень 4 · 7–11 липня', focus: 'Розбір місяця: відгук юзера + власний кейс + корекція стратегії' }
 };
 
-const TAG_LABELS = { reels: 'Reels', tg: 'Telegram', analytics: 'Аналітика', research: 'Дослідження', review: 'Розбір' };
+const TAG_LABELS = { reels: 'Reels', tg: 'Telegram', analytics: 'Аналітика', research: 'Дослідження', review: 'Розбір', tiktok: 'TikTok' };
 
 let state = {};
 let notes = {};
@@ -905,11 +955,13 @@ function updateLeads(val) {
   leads = parseInt(val) || 0;
   save();
   document.getElementById('m-leads').textContent = leads;
+  document.getElementById('m-tiktok').textContent = countTikTok();
 }
 
 function countDone() { return DAYS.filter(d => state[d.id]).length; }
 function countReels() { return DAYS.filter(d => d.tag === 'reels' && state[d.id]).length; }
 function countTg() { return DAYS.filter(d => d.tag === 'tg' && state[d.id]).length; }
+function countTikTok() { return DAYS.filter(d => d.tag === 'tiktok' && state[d.id]).length; }
 
 function updateMetrics() {
   const done = countDone();
@@ -918,6 +970,7 @@ function updateMetrics() {
   document.getElementById('m-reels').textContent = countReels();
   document.getElementById('m-tg').textContent = countTg();
   document.getElementById('m-leads').textContent = leads;
+  document.getElementById('m-tiktok').textContent = countTikTok();
   const pct = Math.round((done / total) * 100);
   document.getElementById('pct-label').textContent = done + ' / ' + total;
   document.getElementById('progress-fill').style.width = pct + '%';
@@ -942,6 +995,7 @@ function render() {
     else if (currentFilter === 'tg') days = days.filter(d => d.tag === 'tg');
     else if (currentFilter === 'analytics') days = days.filter(d => d.tag === 'analytics' || d.tag === 'review');
     else if (currentFilter === 'research') days = days.filter(d => d.tag === 'research');
+    else if (currentFilter === 'tiktok') days = days.filter(d => d.tag === 'tiktok');
     if (!days.length) return;
 
     const block = document.createElement('div');
