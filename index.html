@@ -957,9 +957,7 @@ function storageAvailable() {
 
 function load() {
   try {
-    let raw = null;
-    if (storageAvailable()) raw = localStorage.getItem(STORAGE_KEY);
-    else if (typeof sessionStorage !== 'undefined') raw = sessionStorage.getItem(STORAGE_KEY);
+    const raw = localStorage.getItem(STORAGE_KEY);
     if (raw) {
       const d = JSON.parse(raw);
       state = d.state || {};
@@ -971,9 +969,7 @@ function load() {
 }
 
 function save() {
-  const payload = JSON.stringify({ state, notes, leads });
-  try { if (storageAvailable()) { localStorage.setItem(STORAGE_KEY, payload); return; } } catch(e) {}
-  try { if (typeof sessionStorage !== 'undefined') sessionStorage.setItem(STORAGE_KEY, payload); } catch(e) {}
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ state, notes, leads })); } catch(e) {}
 }
 
 function toggle(id) {
@@ -1120,11 +1116,6 @@ document.addEventListener('DOMContentLoaded', function() {
   render();
   updateMetrics();
 });
-if (document.readyState === 'complete' || document.readyState === 'interactive') {
-  load();
-  render();
-  updateMetrics();
-}
 </script>
 
 </body>
