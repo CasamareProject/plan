@@ -547,7 +547,10 @@
 
   <div class="footer">
     <span class="footer-note">Прогрес зберігається в браузері автоматично · Casamare Beauty 2026</span>
-    <button class="reset-btn" onclick="resetAll()">Скинути прогрес</button>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <button class="reset-btn" onclick="exportForClaude()" style="color:var(--green-text);border-color:var(--green);">📋 Експорт для Claude</button>
+      <button class="reset-btn" onclick="resetAll()">Скинути прогрес</button>
+    </div>
   </div>
 
 </div>
@@ -1089,6 +1092,66 @@ function render() {
 function toggleExpand(id) {
   const row = document.getElementById('row-' + id);
   if (row) row.classList.toggle('expanded');
+}
+
+function exportForClaude() {
+  const doneDays = Object.entries(state)
+    .filter(([id, done]) => done)
+    .map(([id]) => {
+      const day = DAYS.find(d => d.id === parseInt(id));
+      return day ? `✓ День ${id} (${day.date}): ${day.task}` : null;
+    })
+    .filter(Boolean);
+
+  const notesList = Object.entries(notes)
+    .filter(([id, note]) => note && note.trim())
+    .map(([id, note]) => {
+      const day = DAYS.find(d => d.id === parseInt(id));
+      return day ? `День ${id} (${day.date}):\n  ${note.trim()}` : null;
+    })
+    .filter(Boolean);
+
+  const total = DAYS.length;
+  const done = doneDays.length;
+  const pct = Math.round(done / total * 100);
+
+  const text = [
+    '=== Casamare Beauty — Прогрес плану ===',
+    `Виконано: ${done} з ${total} задач (${pct}%)`,
+    `Нові ліди: ${leads}`,
+    '',
+    '--- Виконані задачі ---',
+    doneDays.length ? doneDays.join('\n') : '(поки немає)',
+    '',
+    '--- Нотатки ---',
+    notesList.length ? notesList.join('\n\n') : '(поки немає)',
+  ].join('\n');
+
+  // Copy to clipboard
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(() => {
+      alert('Скопійовано! Встав у чат Claude.');
+    }).catch(() => fallbackCopy(text));
+  } else {
+    fallbackCopy(text);
+  }
+}
+
+function fallbackCopy(text) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.select();
+  try {
+    document.execCommand('copy');
+    alert('Скопійовано! Встав у чат Claude.');
+  } catch(e) {
+    // Show text in alert so user can copy manually
+    prompt('Скопіюй вручну:', text);
+  }
+  document.body.removeChild(ta);
 }
 
 function resetAll() {
